@@ -4,6 +4,7 @@ par(mfcol=c(1,1))
 power<-read.table("household_power_consumption.txt",skip=66637,nrow=2880,na.strings="?",sep=";",stringsAsFactors=FALSE)
 ##give names to the columns
 names(power)<-c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
+##change language to english for the xaxis to show properly
 Sys.setlocale("LC_TIME", "English")
 ##concatenate Date and Time columns together for the next step
 power$dateraw<-paste(power$Date,power$Time,sep=" ")
